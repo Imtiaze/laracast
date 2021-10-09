@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Event Listeners</title>
+</head>
+<body>
+
+    <div id="root">
+        <!-- Greet is the name of the method that define below -->
+        <button v-on:click="greet">Greet</button>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'vue.js'
+            },
+            methods: {
+                // greet: function() {
+
+                //     alert('Hello ' + this.name);
+
+                //     if (event) {
+                //         alert(event.target.tagName);
+                //     }
+                // }
+
+                // ES6 from 2015
+                greet(event) {
+                    alert('Hello ' + this.name);
+                    if (event) {
+                        alert(event.target.tagName);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

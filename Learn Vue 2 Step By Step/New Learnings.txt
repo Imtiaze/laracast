@@ -1,0 +1,41 @@
+1. Basic Data Binding 
+
+input type - v-model="message"
+
+   to display a text -  {{ message }}
+
+   new Vue({
+	el: '#root',
+
+   });
+
+
+2.  Lists
+
+  For displaying a list of data  -  v-for="name in names", also can write  v-text="name"
+
+    new Vue({
+
+	data: {
+		names: ['Html', 'Css', 'Javascript', 'Laravel'],	
+	},
+	
+	mounted() {
+		alert('Run at the time of execution');
+	}
+	
+     })
+
+
+3. Vue Event Listeners
+
+	v-on:click="addName" (addName is called argument here)
+            @click="addName"  is a short hand for v-on:click="addName"
+
+
+	Getting value from a input - 
+       
+        <input type="text" v-model="newName">
+        
+
+ 
