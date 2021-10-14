@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue attribute and class binding</title>
+
+    <style>
+        .color-red {
+            color: red;
+        }
+
+        .color-blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        
+        <h1 :class="className">Hello Vue</h1>
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#root',
+            data: {
+                className: 'color-red',
+            }
+        })
+
+    </script>
+
+</body>
+</html>

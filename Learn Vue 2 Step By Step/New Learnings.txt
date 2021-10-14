@@ -36,6 +36,14 @@ input type - v-model="message"
 	Getting value from a input - 
        
         <input type="text" v-model="newName">
+
+	new Vue({
+
+		data: {
+
+			newName: '',
+		}
+	})
         
 
  

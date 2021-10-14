@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and Style Binding</title>
+</head>
+
+<body>
+
+    <div id="root">
+        
+        <div :style="{ 'color': activeColor, 'font-size': fontSize + 'px'}">Hello Vue</div>
+
+        <div :style="styleObject">Hello Vue</div>
+        
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+       new Vue({
+           el: '#root',
+           data: {
+                activeColor: 'red',
+                fontSize: 30,
+
+                // styleObject
+                styleObject: {
+                    color: 'blue',
+                    'font-size': '40px',
+                }
+           }
+       })
+
+    </script>
+
+</body>
+
+</html>
