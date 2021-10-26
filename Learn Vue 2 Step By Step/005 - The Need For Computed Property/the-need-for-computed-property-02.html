@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue attribute and class binding</title>
+</head>
+<body>
+
+    <div id="root">
+        <h1>All Tasks</h1>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+        <h1>Incompleted Tasks</h1>
+        <ul>
+            <li v-for="task in incompletedTasks" v-text="task.description"></li>
+        </ul>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                tasks: [
+                    {description: 'Go to college', completed: true},
+                    {description: 'Go to store', completed: false},
+                    {description: 'Go to bazar', completed: true},
+                    {description: 'Do the home work', completed: false},
+                    {description: 'Make the donation', completed: false},
+                    {description: 'Do the gadening', completed: true},
+                    {description: 'Say the prayers', completed: false},
+                ]
+            },
+
+            computed: {
+                incompletedTasks() {
+
+                    return this.tasks.filter(task => !task.completed);
+                    
+                    // this.tasks.filter(function (task) {
+                    //     return !task.completed;
+                    // });
+                }
+            }
+
+        });
+    </script>
+
+</body>
+</html>
