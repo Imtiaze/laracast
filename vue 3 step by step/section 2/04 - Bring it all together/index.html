@@ -9,63 +9,12 @@
 </head>
 <body class="h-full grid place-items-center">
     <div id="app">
-        <section v-show="inProgressTask.length">
-            <h2 class="font-bold mb-2">In Progress Task</h2>
-            <ul>
-                <li v-for="task in inProgressTask" :key="task.id">
-                    <label>
-                        {{ task.title }}
-                        <input type="checkbox" v-model="task.complete">
-                    </label>
-                </li>
-            </ul>
-        </section>
         
-        <section v-show="completedTask.length">
-            <h2 class="font-bold mb-2 mt-5">Completed Task</h2>
-            <ul>
-                <li v-for="task in completedTask" :key="task.id">
-                    <label>
-                        {{ task.title }}
-                        <input type="checkbox" v-model="task.complete">
-                    </label>
-                </li>
-            </ul>
-        </section>
     </div>
 
-    <script>
-        let App = {
-            data() {
-                return {
-                    tasks: [
-                        {
-                            id: 1, title: 'Wake Up at 8 am', complete: false
-                        },
-                        {
-                            id: 2, title: 'Brush teeth at 840', complete: false
-                        },
-                        {
-                            id: 3, title: 'BreakFast at 9 am', complete: false
-                        },
-                    ]
-                }
-            },
-
-            computed: {
-
-                inProgressTask() {
-                    return this.tasks.filter(task => !task.complete);
-                },
-                completedTask() {
-                    return this.tasks.filter(function(task) {
-                        return task.complete
-                    });
-                }
-            }
-        }
-
-
+    <script type="module">
+        import App from './js/components/App.js'
+    
         Vue.createApp(App).mount('#app');
     </script>
 
