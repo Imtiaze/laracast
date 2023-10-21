@@ -39,42 +39,20 @@
 <body class="h-full place-items-center grid">
 
     <div id="app">
-        <app-button button_state="primary" :processing="true">Click Me</app-button>
+        <app-button button_state="primary">Click Me</app-button>
     </div>
 
-    <script>
+    <script type="module">
 
-        let App = {
+        import AppButton from "./js/components/AppButton.js";
+
+        let app = {
             components: {
-                'app-button': {
-                    template: `
-                        <button 
-                            :class="{'px-5 py-2 rounded  hover:bg-blue-600 disabled:cursor-not-allowed':true, 
-                                'bg-blue-600': button_state === 'primary', 
-                                'bg-red-400': button_state === 'warning', 
-                                'bg-green-400': button_state === 'success',
-                                'spinner': processing
-                            }" 
-                            :disabled="processing">
-                            <slot/>
-                        </button>
-                    `,
-
-                    props: {
-                        button_state: {
-                            type: String,
-                            default: 'success'
-                        },
-                        processing: {
-                            type: String,
-                            default: false
-                        }
-                    }
-                }
+                'app-button': AppButton
             }
         }
 
-        Vue.createApp(App).mount('#app');
+        Vue.createApp(app).mount('#app');
     </script>
 </body>
 
