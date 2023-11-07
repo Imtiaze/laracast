@@ -1,9 +1,7 @@
 <?php
 
-
-$heading = "Dashboard";
-
-require 'views/index.view.php';
+require 'functions.php';
+require 'router.php';
 
 
 
